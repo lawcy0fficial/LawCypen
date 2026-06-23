@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="hdr">
+    <div class="dot"></div>
+    <h1>lawCYpen</h1>
+  </header>
+
+  <section class="current">
+    <div class="label">Current tab</div>
+    <div class="origin" id="currentOrigin">—</div>
+    <button id="authorizeBtn" class="btn btn-primary">Authorize &amp; monitor this site</button>
+    <div class="hint">Only authorized origins are captured, scanned, or reachable from Repeater. Use this on systems you have written permission to test.</div>
+  </section>
+
+  <section class="targets">
+    <div class="label">Authorized targets</div>
+    <ul id="targetList" class="target-list"></ul>
+    <div id="emptyState" class="empty">No targets authorized yet.</div>
+  </section>
+
+  <footer>
+    <div class="hint">Open DevTools (F12) on an authorized tab → <b>lawCYpen</b> tab for the History, Repeater, and Scope console.</div>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

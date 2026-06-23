@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>lawCYpen — response viewer</title>
+  <style>
+    :root {
+      --bg: #0e1217; --panel: #161b22; --border: #262c36; --text: #e6edf3; --muted: #8b949e; --amber: #e3a008;
+      --mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace; --sans: 'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font-family: var(--sans); }
+    header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--border); background: var(--panel); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 6px var(--amber); }
+    .brand { font-weight: 700; font-size: 13px; }
+    .meta { color: var(--muted); font-size: 11.5px; font-family: var(--mono); }
+    .tabs { display: flex; gap: 6px; margin-left: auto; }
+    .tabbtn { background: var(--bg); border: 1px solid var(--border); color: var(--muted); border-radius: 5px; padding: 5px 11px; font-size: 11.5px; cursor: pointer; }
+    .tabbtn.active { color: var(--text); border-color: var(--amber); }
+    .warn { padding: 6px 14px; background: #2a1f00; color: #f0ab12; font-size: 11px; border-bottom: 1px solid var(--border); }
+    main { height: calc(100% - 72px); }
+    iframe { width: 100%; height: 100%; border: none; background: #fff; }
+    pre { margin: 0; padding: 14px; height: 100%; overflow: auto; font-family: var(--mono); font-size: 12.5px; white-space: pre-wrap; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="dot"></span>
+    <span class="brand">lawCYpen</span>
+    <span class="meta" id="meta">loading…</span>
+    <div class="tabs">
+      <button class="tabbtn active" data-mode="rendered" id="btn-rendered">Rendered</button>
+      <button class="tabbtn" data-mode="raw" id="btn-raw">Raw</button>
+    </div>
+  </header>
+  <div class="warn" id="warn" style="display:none;">Rendered view runs in a sandboxed, originless frame — scripts may execute to show payload behavior, but the frame has no access to the real site's cookies, storage, or session.</div>
+  <main id="main"></main>
+  <script src="viewer.js"></script>
+</body>
+</html>

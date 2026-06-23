@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="panel.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><span class="dot"></span> lawCYpen</div>
+      <input id="filterInput" class="filter-input" placeholder="Filter history — method, host, path, status…" />
+      <button id="clearBtn" class="btn-icon" title="Clear captured data">Clear data</button>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="history">HTTP History</button>
+      <button class="tab" data-tab="repeater">Repeater</button>
+      <button class="tab" data-tab="scope">Scope</button>
+      <button class="tab" data-tab="analysis">Analysis</button>
+      <button class="tab" data-tab="roadmap">Roadmap</button>
+    </nav>
+
+    <main class="content">
+      <section id="panel-history" class="panel active">
+        <div class="history-layout">
+          <div class="history-table-wrap">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th class="col-num">#</th>
+                  <th class="col-method">Method</th>
+                  <th class="col-host">Host</th>
+                  <th class="col-path">Path</th>
+                  <th class="col-status">Status</th>
+                  <th class="col-type">Type</th>
+                  <th class="col-size">Size</th>
+                  <th class="col-time">Time</th>
+                </tr>
+              </thead>
+              <tbody id="historyTbody"></tbody>
+            </table>
+          </div>
+          <div class="resizer" id="historyResizer"></div>
+          <div class="history-detail" id="historyDetail">
+            <div class="empty-msg">Select a request above to view its full request and response.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="panel-repeater" class="panel">
+        <div class="repeater-tabbar">
+          <div class="repeater-tabs" id="repeaterTabs"></div>
+          <button id="newRepeaterBtn" class="btn-icon">+ New</button>
+        </div>
+        <div class="repeater-body" id="repeaterBody">
+          <div class="empty-msg">Send a request here from HTTP History, or click "+ New" to start one from scratch.</div>
+        </div>
+      </section>
+
+      <section id="panel-scope" class="panel">
+        <div class="scope-grid">
+          <div class="scope-col">
+            <h3>Authorized targets</h3>
+            <p class="muted">Granting an origin here installs the capture hooks and lets Repeater send requests to it. Only add systems you have written authorization to test.</p>
+            <div class="scope-add-row">
+              <input id="newTargetInput" class="text-input" placeholder="https://app.example.com" />
+              <button id="addTargetBtn" class="btn btn-primary">Authorize</button>
+            </div>
+            <ul id="targetList" class="scope-list"></ul>
+          </div>
+          <div class="scope-col">
+            <h3>Include patterns</h3>
+            <p class="muted">Extra wildcard patterns to widen scope beyond authorized targets (e.g. <code>*.internal.example.com</code>).</p>
+            <div class="scope-add-row">
+              <input id="newIncludeInput" class="text-input" placeholder="*.example.com/*" />
+              <button id="addIncludeBtn" class="btn btn-ghost">Add</button>
+            </div>
+            <ul id="includeList" class="scope-list"></ul>
+
+            <h3>Exclude patterns</h3>
+            <p class="muted">Filter out noise within scope (e.g. analytics, CDNs).</p>
+            <div class="scope-add-row">
+              <input id="newExcludeInput" class="text-input" placeholder="*.doubleclick.net/*" />
+              <button id="addExcludeBtn" class="btn btn-ghost">Add</button>
+            </div>
+            <ul id="excludeList" class="scope-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="panel-analysis" class="panel">
+        <nav class="subtabs">
+          <button class="subtab active" data-subtab="endpoints">Endpoints <span class="count" id="count-endpoints"></span></button>
+          <button class="subtab" data-subtab="graphql">GraphQL <span class="count" id="count-graphql"></span></button>
+          <button class="subtab" data-subtab="secrets">Secrets <span class="count" id="count-secrets"></span></button>
+          <button class="subtab" data-subtab="jwts">JWTs <span class="count" id="count-jwts"></span></button>
+          <button class="subtab" data-subtab="idor">IDOR <span class="count" id="count-idor"></span></button>
+          <button class="subtab" data-subtab="s3">S3 Buckets <span class="count" id="count-s3"></span></button>
+          <button class="subtab" data-subtab="takeover">Takeover <span class="count" id="count-takeover"></span></button>
+        </nav>
+        <div id="sub-endpoints" class="subpanel active list mono"></div>
+        <div id="sub-graphql" class="subpanel list mono"></div>
+        <div id="sub-secrets" class="subpanel list mono"></div>
+        <div id="sub-jwts" class="subpanel list mono"></div>
+        <div id="sub-idor" class="subpanel list mono"></div>
+        <div id="sub-s3" class="subpanel list mono"></div>
+        <div id="sub-takeover" class="subpanel mono">
+          <p class="muted" style="margin-bottom:8px;">Hostnames seen in scoped traffic, plus any you add manually. "Check" looks up the CNAME and, for known dangling-service patterns, fetches the host once to check for an "unclaimed" fingerprint. Detection only — nothing is ever auto-claimed or registered.</p>
+          <div class="scope-add-row">
+            <input id="newTakeoverHostInput" class="text-input" placeholder="forgotten.example.com" />
+            <button id="addTakeoverHostBtn" class="btn btn-ghost">Add hostname</button>
+          </div>
+          <div id="takeoverList" class="list mono"></div>
+        </div>
+      </section>
+
+      <section id="panel-roadmap" class="panel">
+        <div class="roadmap">
+          <p class="roadmap-intro">Built: full traffic capture (all resource types, real status codes), HTTP History, Repeater, Scope, render-response-in-browser, endpoint/secret/JWT/GraphQL analysis.</p>
+          <p class="roadmap-intro">Planned next (each plugs into this same history pipeline):</p>
+          <ul class="roadmap-list">
+            <li>OAuth flow recorder — passive analysis of the redirect chain already in History</li>
+            <li>IDOR candidate detector — flag numeric/UUID params in History, one-click "replay with edited ID" via Repeater</li>
+            <li>Mass-assignment detector — diff request vs. response JSON shape</li>
+            <li>Role-based replay engine — capture one session per role, replay a History item under a different stored session</li>
+            <li>CSP bypass analyzer — parse CSP headers already visible in History</li>
+            <li>Business-logic workflow recorder — mark start/end ranges over History entries</li>
+            <li>AI-assisted finding correlation — summarize relationships between existing findings</li>
+            <li>Client-side source-to-sink XSS tracking — taint tracking on DOM sinks</li>
+            <li>Hidden admin route discovery — mine Endpoints + JS bundles for unlinked admin-shaped paths</li>
+            <li>OpenAPI/Swagger auto-import — diff a spec against discovered Endpoints</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="panel.js"></script>
+</body>
+</html>
