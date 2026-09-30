@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 230" width="1200" height="230" role="img" aria-label="Get started in four steps">
+  <defs>
+    <style>
+      @keyframes drift {{ 0% {{ transform: translate(0,0); }} 50% {{ transform: translate(6px,-8px); }} 100% {{ transform: translate(0,0); }} }}
+      @keyframes flicker {{ 0%,19%,21%,55%,57%,100% {{ opacity: 1; }} 20%,56% {{ opacity: .55; }} }}
+      @keyframes sweep {{ 0% {{ transform: translateX(-120%); }} 100% {{ transform: translateX(220%); }} }}
+      @keyframes blink {{ 0%,100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
+      @keyframes pulseGlow {{ 0%,100% {{ opacity: .35; }} 50% {{ opacity: .9; }} }}
+      @keyframes rot {{ from {{ transform: rotate(0deg); }} to {{ transform: rotate(360deg); }} }}
+    </style>
+</defs>
+  <rect width="1200" height="230" rx="18" fill="#060a10"/>
+  <rect x="1" y="1" width="1198" height="228" rx="18" fill="none" stroke="#00ff9d" stroke-opacity="0.3"/>
+  <text x="600.0" y="46" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="20" font-weight="800" letter-spacing="1" fill="#eaf6ff">GET RUNNING IN UNDER A MINUTE</text>
+  
+        <g>
+          <circle cx="225.0" cy="110" r="28" fill="#0a121b" stroke="#00ff9d" stroke-width="2"/>
+          <circle cx="225.0" cy="110" r="28" fill="#00ff9d" opacity="0.08" style="animation: pulseGlow 2.2s ease-in-out infinite; animation-delay:0.0s"/>
+          <text x="225.0" y="118" text-anchor="middle" font-family="ui-monospace,monospace" font-size="20" font-weight="800" fill="#00ff9d">1</text>
+          <text x="225.0" y="160" text-anchor="middle" font-family="ui-monospace,monospace" font-size="13" fill="#c3d3e0">Load unpacked</text>
+        </g><line x1="255.0" y1="110" x2="445.0" y2="110" stroke="#2a3a4a" stroke-width="2" stroke-dasharray="4 6"/>
+        <g>
+          <circle cx="475.0" cy="110" r="28" fill="#0a121b" stroke="#00d9ff" stroke-width="2"/>
+          <circle cx="475.0" cy="110" r="28" fill="#00d9ff" opacity="0.08" style="animation: pulseGlow 2.2s ease-in-out infinite; animation-delay:0.25s"/>
+          <text x="475.0" y="118" text-anchor="middle" font-family="ui-monospace,monospace" font-size="20" font-weight="800" fill="#00d9ff">2</text>
+          <text x="475.0" y="160" text-anchor="middle" font-family="ui-monospace,monospace" font-size="13" fill="#c3d3e0">Authorize target</text>
+        </g><line x1="505.0" y1="110" x2="695.0" y2="110" stroke="#2a3a4a" stroke-width="2" stroke-dasharray="4 6"/>
+        <g>
+          <circle cx="725.0" cy="110" r="28" fill="#0a121b" stroke="#b829ff" stroke-width="2"/>
+          <circle cx="725.0" cy="110" r="28" fill="#b829ff" opacity="0.08" style="animation: pulseGlow 2.2s ease-in-out infinite; animation-delay:0.5s"/>
+          <text x="725.0" y="118" text-anchor="middle" font-family="ui-monospace,monospace" font-size="20" font-weight="800" fill="#b829ff">3</text>
+          <text x="725.0" y="160" text-anchor="middle" font-family="ui-monospace,monospace" font-size="13" fill="#c3d3e0">Open DevTools</text>
+        </g><line x1="755.0" y1="110" x2="945.0" y2="110" stroke="#2a3a4a" stroke-width="2" stroke-dasharray="4 6"/>
+        <g>
+          <circle cx="975.0" cy="110" r="28" fill="#0a121b" stroke="#ff3ec9" stroke-width="2"/>
+          <circle cx="975.0" cy="110" r="28" fill="#ff3ec9" opacity="0.08" style="animation: pulseGlow 2.2s ease-in-out infinite; animation-delay:0.75s"/>
+          <text x="975.0" y="118" text-anchor="middle" font-family="ui-monospace,monospace" font-size="20" font-weight="800" fill="#ff3ec9">4</text>
+          <text x="975.0" y="160" text-anchor="middle" font-family="ui-monospace,monospace" font-size="13" fill="#c3d3e0">Browse &amp; capture</text>
+        </g>
+</svg>

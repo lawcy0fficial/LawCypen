@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="lawCYpen banner">
+  <defs>
+    <linearGradient id="tb-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#040609"/>
+      <stop offset="55%" stop-color="#081018"/>
+      <stop offset="100%" stop-color="#040609"/>
+    </linearGradient>
+    <linearGradient id="tb-text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00ff9d"/>
+      <stop offset="55%" stop-color="#00d9ff"/>
+      <stop offset="100%" stop-color="#b829ff"/>
+    </linearGradient>
+    <pattern id="tb-grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#00d9ff" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <filter id="tb-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="tb-clip"><rect width="1200" height="320" rx="18"/></clipPath>
+    
+    <style>
+      @keyframes drift {{ 0% {{ transform: translate(0,0); }} 50% {{ transform: translate(6px,-8px); }} 100% {{ transform: translate(0,0); }} }}
+      @keyframes flicker {{ 0%,19%,21%,55%,57%,100% {{ opacity: 1; }} 20%,56% {{ opacity: .55; }} }}
+      @keyframes sweep {{ 0% {{ transform: translateX(-120%); }} 100% {{ transform: translateX(220%); }} }}
+      @keyframes blink {{ 0%,100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
+      @keyframes pulseGlow {{ 0%,100% {{ opacity: .35; }} 50% {{ opacity: .9; }} }}
+      @keyframes rot {{ from {{ transform: rotate(0deg); }} to {{ transform: rotate(360deg); }} }}
+    </style>
+
+    <style>
+      .tb-sweep { animation: sweep 5s ease-in-out infinite; }
+      .tb-title { animation: flicker 6s linear infinite; }
+      .tb-cursor { animation: blink 1s step-start infinite; }
+    </style>
+  </defs>
+
+  <g clip-path="url(#tb-clip)">
+    <rect width="1200" height="320" fill="url(#tb-bg)"/>
+    <rect width="1200" height="320" fill="url(#tb-grid)"/>
+    <circle cx="60" cy="40" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.0s ease-in-out infinite; animation-delay:0.0s"/><circle cx="107" cy="98" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.4s ease-in-out infinite; animation-delay:0.15s"/><circle cx="154" cy="156" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.8s ease-in-out infinite; animation-delay:0.3s"/><circle cx="201" cy="214" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 4.2s ease-in-out infinite; animation-delay:0.44999999999999996s"/><circle cx="248" cy="40" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 4.6s ease-in-out infinite; animation-delay:0.6s"/><circle cx="295" cy="98" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.0s ease-in-out infinite; animation-delay:0.75s"/><circle cx="342" cy="156" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.4s ease-in-out infinite; animation-delay:0.8999999999999999s"/><circle cx="389" cy="214" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.8s ease-in-out infinite; animation-delay:1.05s"/><circle cx="436" cy="40" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 4.2s ease-in-out infinite; animation-delay:1.2s"/><circle cx="483" cy="98" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 4.6s ease-in-out infinite; animation-delay:1.3499999999999999s"/><circle cx="530" cy="156" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.0s ease-in-out infinite; animation-delay:1.5s"/><circle cx="577" cy="214" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.4s ease-in-out infinite; animation-delay:1.65s"/><circle cx="624" cy="40" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.8s ease-in-out infinite; animation-delay:1.7999999999999998s"/><circle cx="671" cy="98" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 4.2s ease-in-out infinite; animation-delay:1.95s"/><circle cx="718" cy="156" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 4.6s ease-in-out infinite; animation-delay:2.1s"/><circle cx="765" cy="214" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.0s ease-in-out infinite; animation-delay:2.25s"/><circle cx="812" cy="40" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.4s ease-in-out infinite; animation-delay:2.4s"/><circle cx="859" cy="98" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.8s ease-in-out infinite; animation-delay:2.55s"/><circle cx="906" cy="156" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 4.2s ease-in-out infinite; animation-delay:2.6999999999999997s"/><circle cx="953" cy="214" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 4.6s ease-in-out infinite; animation-delay:2.85s"/><circle cx="1000" cy="40" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.0s ease-in-out infinite; animation-delay:3.0s"/><circle cx="1047" cy="98" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.4s ease-in-out infinite; animation-delay:3.15s"/><circle cx="1094" cy="156" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 3.8s ease-in-out infinite; animation-delay:3.3s"/><circle cx="1141" cy="214" r="1.6" fill="#00ff9d" opacity="0.35" style="animation: drift 4.2s ease-in-out infinite; animation-delay:3.4499999999999997s"/>
+    <rect class="tb-sweep" x="0" y="0" width="260" height="320" fill="#00ff9d" opacity="0.05" transform="skewX(-18)"/>
+  </g>
+  <rect x="1" y="1" width="1198" height="318" rx="18" fill="none" stroke="#00d9ff" stroke-opacity="0.35" stroke-width="1.5"/>
+
+  <!-- reticle corners -->
+  <g stroke="#00ff9d" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.85">
+    <path d="M26 56V26H56"/><path d="M1174 56V26H1144"/>
+    <path d="M26 264V294H56"/><path d="M1174 264V294H1144"/>
+  </g>
+
+  <text x="70" y="150" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="20" fill="#00ff9d" opacity="0.85">$ chrome://extensions --load-unpacked</text>
+
+  <g class="tb-title">
+    <text x="68" y="216" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="86" font-weight="800" fill="url(#tb-text)" filter="url(#tb-glow)">lawCYpen</text>
+    <rect class="tb-cursor" x="628" y="152" width="14" height="64" fill="#00ff9d"/>
+  </g>
+
+  <text x="70" y="256" font-family="ui-monospace,monospace" font-size="19" fill="#c3d3e0">A Burp-style HTTP traffic console, built entirely into Chrome DevTools.</text>
+  <text x="70" y="284" font-family="ui-monospace,monospace" font-size="14" letter-spacing="1.5" fill="#7d92a6">CAPTURE · REPEAT · INTRUDE · ANALYZE · REPORT &#160;—&#160; AUTHORIZED-SCOPE ONLY</text>
+
+  <g transform="translate(1050,40)" opacity="0.9">
+    <circle r="46" fill="none" stroke="#00d9ff" stroke-width="1" stroke-dasharray="2 8" style="transform-origin:0 0; animation: rot 10s linear infinite;"/>
+    <circle r="34" fill="none" stroke="#b829ff" stroke-width="1" stroke-dasharray="1 6" style="transform-origin:0 0; animation: rot 16s linear infinite reverse;"/>
+    <text x="0" y="8" text-anchor="middle" font-size="30" fill="#00ff9d" filter="url(#tb-glow)">&#9635;</text>
+  </g>
+</svg>

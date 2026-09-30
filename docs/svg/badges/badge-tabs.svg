@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 54" width="250" height="54" role="img" aria-label="panel tabs: 28">
+  <defs>
+    <linearGradient id="bgL-tabs" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0f16"/>
+      <stop offset="100%" stop-color="#0d1420"/>
+    </linearGradient>
+    <linearGradient id="bgR-tabs" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff3ec9" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff3ec9" stop-opacity="0.55"/>
+    </linearGradient>
+    <filter id="g-tabs" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .dot-tabs { animation: p-tabs 1.8s ease-in-out infinite; transform-origin: 20px 27px; }
+      .sheen-tabs { animation: s-tabs 3.2s linear infinite; }
+      @keyframes p-tabs { 0%,100% { opacity:1; transform: scale(1);} 50% { opacity:.45; transform: scale(1.4);} }
+      @keyframes s-tabs { 0% { transform: translateX(-40px); opacity:0; } 50% { opacity:.5; } 100% { transform: translateX(260px); opacity:0; } }
+    </style>
+  </defs>
+  <clipPath id="clip-tabs"><rect x="0.5" y="0.5" width="249" height="53" rx="12"/></clipPath>
+  <g clip-path="url(#clip-tabs)">
+    <rect x="0" y="0" width="130" height="54" fill="url(#bgL-tabs)"/>
+    <rect x="130" y="0" width="120" height="54" fill="url(#bgR-tabs)"/>
+    <rect class="sheen-tabs" x="0" y="0" width="30" height="54" fill="#ffffff" opacity="0.06" transform="skewX(-18)"/>
+  </g>
+  <rect x="0.5" y="0.5" width="249" height="53" rx="12" fill="none" stroke="#ff3ec9" stroke-opacity="0.55" stroke-width="1.2"/>
+  <circle class="dot-tabs" cx="20" cy="27" r="4.5" fill="#ff3ec9" filter="url(#g-tabs)"/>
+  <text x="34" y="32" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" fill="#b9c6d6">panel tabs</text>
+  <text x="144" y="32" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13.5" font-weight="700" fill="#031014">28</text>
+</svg>
