@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-label="lawCYpen architecture diagram">
+  <defs>
+    <linearGradient id="ar-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050810"/>
+      <stop offset="100%" stop-color="#080c14"/>
+    </linearGradient>
+    <pattern id="ar-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#00d9ff" stroke-opacity="0.05"/>
+    </pattern>
+    
+    <style>
+      @keyframes drift {{ 0% {{ transform: translate(0,0); }} 50% {{ transform: translate(6px,-8px); }} 100% {{ transform: translate(0,0); }} }}
+      @keyframes flicker {{ 0%,19%,21%,55%,57%,100% {{ opacity: 1; }} 20%,56% {{ opacity: .55; }} }}
+      @keyframes sweep {{ 0% {{ transform: translateX(-120%); }} 100% {{ transform: translateX(220%); }} }}
+      @keyframes blink {{ 0%,100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
+      @keyframes pulseGlow {{ 0%,100% {{ opacity: .35; }} 50% {{ opacity: .9; }} }}
+      @keyframes rot {{ from {{ transform: rotate(0deg); }} to {{ transform: rotate(360deg); }} }}
+    </style>
+
+  </defs>
+  <rect width="1200" height="560" rx="18" fill="url(#ar-bg)"/>
+  <rect width="1200" height="560" rx="18" fill="url(#ar-grid)"/>
+  <rect x="1" y="1" width="1198" height="558" rx="18" fill="none" stroke="#00d9ff" stroke-opacity="0.3"/>
+
+  <text x="40" y="34" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="16" font-weight="800" letter-spacing="1.5" fill="#eaf6ff">DATA FLOW ARCHITECTURE</text>
+
+  <path d="M340 98 L470 220" fill="none" stroke="#00d9ff" stroke-width="1.6" stroke-dasharray="6 6" opacity="0.7">
+          <animate attributeName="stroke-dashoffset" from="60" to="0" dur="1.8s" begin="0s" repeatCount="indefinite"/>
+        </path><path d="M340 228 L470 228" fill="none" stroke="#b829ff" stroke-width="1.6" stroke-dasharray="6 6" opacity="0.7">
+          <animate attributeName="stroke-dashoffset" from="60" to="0" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
+        </path><path d="M340 358 L470 240" fill="none" stroke="#00ff9d" stroke-width="1.6" stroke-dasharray="6 6" opacity="0.7">
+          <animate attributeName="stroke-dashoffset" from="60" to="0" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+        </path><path d="M770 215 L900 140" fill="none" stroke="#ffb800" stroke-width="1.6" stroke-dasharray="6 6" opacity="0.7">
+          <animate attributeName="stroke-dashoffset" from="60" to="0" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
+        </path><path d="M1030 176 L1030 300" fill="none" stroke="#00d9ff" stroke-width="1.6" stroke-dasharray="6 6" opacity="0.7">
+          <animate attributeName="stroke-dashoffset" from="60" to="0" dur="1.8s" begin="1.2s" repeatCount="indefinite"/>
+        </path><path d="M900 338 L770 245" fill="none" stroke="#ff3ec9" stroke-width="1.6" stroke-dasharray="6 6" opacity="0.7">
+          <animate attributeName="stroke-dashoffset" from="60" to="0" dur="1.8s" begin="1.5s" repeatCount="indefinite"/>
+        </path>
+  <g>
+          <rect x="40" y="60" width="300" height="76" rx="12" fill="#0a121b" stroke="#00d9ff" stroke-width="1.6"/>
+          <rect x="40" y="60" width="300" height="76" rx="12" fill="#00d9ff" opacity="0.06"/>
+          <text x="190.0" y="94.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="15" font-weight="700" fill="#eaf6ff">chrome.devtools.network</text>
+          <text x="190.0" y="114.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10.5" fill="#00d9ff">DevTools page — request/response capture</text>
+        </g><g>
+          <rect x="40" y="190" width="300" height="76" rx="12" fill="#0a121b" stroke="#b829ff" stroke-width="1.6"/>
+          <rect x="40" y="190" width="300" height="76" rx="12" fill="#b829ff" opacity="0.06"/>
+          <text x="190.0" y="224.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="15" font-weight="700" fill="#eaf6ff">injected.js</text>
+          <text x="190.0" y="244.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10.5" fill="#b829ff">MAIN world — WebSocket frame hook</text>
+        </g><g>
+          <rect x="40" y="320" width="300" height="76" rx="12" fill="#0a121b" stroke="#00ff9d" stroke-width="1.6"/>
+          <rect x="40" y="320" width="300" height="76" rx="12" fill="#00ff9d" opacity="0.06"/>
+          <text x="190.0" y="354.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="15" font-weight="700" fill="#eaf6ff">content-script.js</text>
+          <text x="190.0" y="374.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10.5" fill="#00ff9d">ISOLATED world — WS relay · script scraping</text>
+        </g><g>
+          <rect x="470" y="190" width="300" height="76" rx="12" fill="#0a121b" stroke="#ffb800" stroke-width="1.6"/>
+          <rect x="470" y="190" width="300" height="76" rx="12" fill="#ffb800" opacity="0.06"/>
+          <text x="620.0" y="224.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="15" font-weight="700" fill="#eaf6ff">background.js</text>
+          <text x="620.0" y="244.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10.5" fill="#ffb800">Service worker — scope filter · analyzers · storage</text>
+        </g><g>
+          <rect x="900" y="100" width="260" height="76" rx="12" fill="#0a121b" stroke="#00d9ff" stroke-width="1.6"/>
+          <rect x="900" y="100" width="260" height="76" rx="12" fill="#00d9ff" opacity="0.06"/>
+          <text x="1030.0" y="134.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="15" font-weight="700" fill="#eaf6ff">chrome.storage</text>
+          <text x="1030.0" y="154.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10.5" fill="#00d9ff">history · findings · scope · repeater items</text>
+        </g><g>
+          <rect x="900" y="300" width="260" height="76" rx="12" fill="#0a121b" stroke="#ff3ec9" stroke-width="1.6"/>
+          <rect x="900" y="300" width="260" height="76" rx="12" fill="#ff3ec9" opacity="0.06"/>
+          <text x="1030.0" y="334.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="15" font-weight="700" fill="#eaf6ff">panel.js</text>
+          <text x="1030.0" y="354.0" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10.5" fill="#ff3ec9">lawCYpen DevTools panel — 28 tabs render here</text>
+        </g>
+
+  <text x="40" y="536" font-family="ui-monospace,monospace" font-size="11.5" fill="#7d92a6">Analyzer modules (modules/*.js) are plain scan(text, ctx) -&gt; findings[] functions, invoked from background.js.</text>
+</svg>

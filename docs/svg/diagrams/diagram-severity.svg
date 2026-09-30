@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="Severity scale">
+  <defs>
+    <pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#00d9ff" stroke-opacity="0.05"/></pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8fa3b8"/></marker>
+    <style>
+      @keyframes pulse { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+      @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:0 } }
+      @keyframes rot { to { transform: rotate(360deg) } }
+      @keyframes fall { from { transform: translateY(-260px) } to { transform: translateY(420px) } }
+      @keyframes dash { to { stroke-dashoffset: -40 } }
+      @keyframes hl { 0%,100% { opacity:0 } 50% { opacity:.35 } }
+      .p { animation: pulse 2.4s ease-in-out infinite }
+      .d { stroke-dasharray: 6 6; animation: dash 1.4s linear infinite }
+      
+    </style>
+  </defs>
+  <rect width="1200" height="150" rx="18" fill="#050810"/>
+  <rect width="1200" height="150" rx="18" fill="url(#g)"/>
+  <rect x="1" y="1" width="1198" height="148" rx="18" fill="none" stroke="#00d9ff" stroke-opacity="0.28"/>
+<text x="40" y="40" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="17" font-weight="800" letter-spacing="1.5" fill="#eaf6ff">SEVERITY SCALE</text><rect x="40.0" y="70" width="210.0" height="50" rx="10" fill="#8fa3b8" opacity="0.15" stroke="#8fa3b8"/><rect x="40.0" y="70" width="210.0" height="50" rx="10" fill="#8fa3b8" class="p" style="animation-delay:0.0s" opacity="0.12"/><text x="145.0" y="102" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="15" font-weight="800" fill="#8fa3b8">INFO</text><rect x="264.0" y="70" width="210.0" height="50" rx="10" fill="#00d9ff" opacity="0.15" stroke="#00d9ff"/><rect x="264.0" y="70" width="210.0" height="50" rx="10" fill="#00d9ff" class="p" style="animation-delay:0.3s" opacity="0.12"/><text x="369.0" y="102" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="15" font-weight="800" fill="#00d9ff">LOW</text><rect x="488.0" y="70" width="210.0" height="50" rx="10" fill="#ffb800" opacity="0.15" stroke="#ffb800"/><rect x="488.0" y="70" width="210.0" height="50" rx="10" fill="#ffb800" class="p" style="animation-delay:0.6s" opacity="0.12"/><text x="593.0" y="102" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="15" font-weight="800" fill="#ffb800">MEDIUM</text><rect x="712.0" y="70" width="210.0" height="50" rx="10" fill="#ff7a3d" opacity="0.15" stroke="#ff7a3d"/><rect x="712.0" y="70" width="210.0" height="50" rx="10" fill="#ff7a3d" class="p" style="animation-delay:0.8999999999999999s" opacity="0.12"/><text x="817.0" y="102" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="15" font-weight="800" fill="#ff7a3d">HIGH</text><rect x="936.0" y="70" width="210.0" height="50" rx="10" fill="#ff3860" opacity="0.15" stroke="#ff3860"/><rect x="936.0" y="70" width="210.0" height="50" rx="10" fill="#ff3860" class="p" style="animation-delay:1.2s" opacity="0.12"/><text x="1041.0" y="102" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="15" font-weight="800" fill="#ff3860">CRITICAL</text>
+</svg>

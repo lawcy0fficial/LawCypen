@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="1200" height="140" role="img" aria-label="Heartbeat">
+  <defs>
+    <pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#00d9ff" stroke-opacity="0.05"/></pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8fa3b8"/></marker>
+    <style>
+      @keyframes pulse { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+      @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:0 } }
+      @keyframes rot { to { transform: rotate(360deg) } }
+      @keyframes fall { from { transform: translateY(-260px) } to { transform: translateY(420px) } }
+      @keyframes dash { to { stroke-dashoffset: -40 } }
+      @keyframes hl { 0%,100% { opacity:0 } 50% { opacity:.35 } }
+      .p { animation: pulse 2.4s ease-in-out infinite }
+      .d { stroke-dasharray: 6 6; animation: dash 1.4s linear infinite }
+      
+    </style>
+  </defs>
+  <rect width="1200" height="140" rx="18" fill="#050810"/>
+  <rect width="1200" height="140" rx="18" fill="url(#g)"/>
+  <rect x="1" y="1" width="1198" height="138" rx="18" fill="none" stroke="#00d9ff" stroke-opacity="0.28"/>
+<path d="M0 70 H360 L390 70 L410 20 L440 120 L465 70 H700 L730 70 L750 30 L780 110 L800 70 H1200" fill="none" stroke="#00ff9d" stroke-opacity="0.2" stroke-width="2"/><path d="M0 70 H360 L390 70 L410 20 L440 120 L465 70 H700 L730 70 L750 30 L780 110 L800 70 H1200" fill="none" stroke="#00ff9d" stroke-width="3" stroke-dasharray="180 1400" stroke-linecap="round" filter="url(#glow)"><animate attributeName="stroke-dashoffset" from="1580" to="0" dur="3.6s" repeatCount="indefinite"/></path><text x="40" y="40" text-anchor="start" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="14" font-weight="800" fill="#00ff9d">CAPTURE ACTIVE</text><text x="1160" y="40" text-anchor="end" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="12" font-weight="400" fill="#8fa3b8">DevTools open · scope enforced</text>
+</svg>

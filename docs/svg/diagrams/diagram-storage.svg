@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Storage lifecycle">
+  <defs>
+    <pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#00d9ff" stroke-opacity="0.05"/></pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8fa3b8"/></marker>
+    <style>
+      @keyframes pulse { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+      @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:0 } }
+      @keyframes rot { to { transform: rotate(360deg) } }
+      @keyframes fall { from { transform: translateY(-260px) } to { transform: translateY(420px) } }
+      @keyframes dash { to { stroke-dashoffset: -40 } }
+      @keyframes hl { 0%,100% { opacity:0 } 50% { opacity:.35 } }
+      .p { animation: pulse 2.4s ease-in-out infinite }
+      .d { stroke-dasharray: 6 6; animation: dash 1.4s linear infinite }
+      
+    </style>
+  </defs>
+  <rect width="1200" height="300" rx="18" fill="#050810"/>
+  <rect width="1200" height="300" rx="18" fill="url(#g)"/>
+  <rect x="1" y="1" width="1198" height="298" rx="18" fill="none" stroke="#00d9ff" stroke-opacity="0.28"/>
+<text x="40" y="40" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="17" font-weight="800" letter-spacing="1.5" fill="#eaf6ff">WHAT PERSISTS AND WHAT DOES NOT</text><rect x="60" y="80" width="500" height="170" rx="11" fill="#0a121b" stroke="#ffb800" stroke-width="1.6"/><rect x="60" y="80" width="500" height="170" rx="11" fill="#ffb800" opacity="0.06"/><text x="310.0" y="170.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="16" font-weight="700" fill="#eaf6ff">chrome.storage.session</text><text x="310" y="150" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="13" font-weight="400" fill="#eaf6ff">History · findings</text><text x="310" y="176" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="12" font-weight="400" fill="#ffb800">cleared when the browser closes</text><text x="310" y="202" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="11.5" font-weight="400" fill="#8fa3b8">400 entries · ~8 KB body previews</text><rect x="640" y="80" width="500" height="170" rx="11" fill="#0a121b" stroke="#00ff9d" stroke-width="1.6"/><rect x="640" y="80" width="500" height="170" rx="11" fill="#00ff9d" opacity="0.06"/><text x="890.0" y="170.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="16" font-weight="700" fill="#eaf6ff">chrome.storage.local</text><text x="890" y="150" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="13" font-weight="400" fill="#eaf6ff">Targets · scope · Repeater items</text><text x="890" y="176" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="12" font-weight="400" fill="#00ff9d">persists across restarts</text><text x="890" y="202" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="11.5" font-weight="400" fill="#8fa3b8">OpenRouter key (this profile only)</text>
+</svg>

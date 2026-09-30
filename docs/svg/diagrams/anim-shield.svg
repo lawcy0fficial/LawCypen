@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Shield">
+  <defs>
+    <pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#00d9ff" stroke-opacity="0.05"/></pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8fa3b8"/></marker>
+    <style>
+      @keyframes pulse { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+      @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:0 } }
+      @keyframes rot { to { transform: rotate(360deg) } }
+      @keyframes fall { from { transform: translateY(-260px) } to { transform: translateY(420px) } }
+      @keyframes dash { to { stroke-dashoffset: -40 } }
+      @keyframes hl { 0%,100% { opacity:0 } 50% { opacity:.35 } }
+      .p { animation: pulse 2.4s ease-in-out infinite }
+      .d { stroke-dasharray: 6 6; animation: dash 1.4s linear infinite }
+      
+    </style>
+  </defs>
+  <rect width="400" height="400" rx="18" fill="#050810"/>
+  <rect width="400" height="400" rx="18" fill="url(#g)"/>
+  <rect x="1" y="1" width="398" height="398" rx="18" fill="none" stroke="#00d9ff" stroke-opacity="0.28"/>
+<g style="transform-origin:200px 200px; animation: rot 18s linear infinite" opacity="0.5"><circle cx="200" cy="200" r="170" fill="none" stroke="#00d9ff" stroke-dasharray="3 12"/></g><path d="M200 60 L310 100 V200 C310 270 260 320 200 345 C140 320 90 270 90 200 V100 Z" fill="#0a121b" stroke="#00ff9d" stroke-width="3" filter="url(#glow)"/><path d="M150 205 L190 245 L260 160" fill="none" stroke="#00ff9d" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" class="p"/><text x="200" y="385" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="13" font-weight="800" fill="#00ff9d">SCOPE-ENFORCED</text>
+</svg>

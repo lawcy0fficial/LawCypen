@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" width="520" height="520" role="img" aria-label="Radar">
+  <defs>
+    <pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#00d9ff" stroke-opacity="0.05"/></pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8fa3b8"/></marker>
+    <style>
+      @keyframes pulse { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+      @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:0 } }
+      @keyframes rot { to { transform: rotate(360deg) } }
+      @keyframes fall { from { transform: translateY(-260px) } to { transform: translateY(420px) } }
+      @keyframes dash { to { stroke-dashoffset: -40 } }
+      @keyframes hl { 0%,100% { opacity:0 } 50% { opacity:.35 } }
+      .p { animation: pulse 2.4s ease-in-out infinite }
+      .d { stroke-dasharray: 6 6; animation: dash 1.4s linear infinite }
+      
+    </style>
+  </defs>
+  <rect width="520" height="520" rx="18" fill="#050810"/>
+  <rect width="520" height="520" rx="18" fill="url(#g)"/>
+  <rect x="1" y="1" width="518" height="518" rx="18" fill="none" stroke="#00d9ff" stroke-opacity="0.28"/>
+<circle cx="260" cy="260" r="60" fill="none" stroke="#00ff9d" stroke-opacity="0.25"/><circle cx="260" cy="260" r="110" fill="none" stroke="#00ff9d" stroke-opacity="0.25"/><circle cx="260" cy="260" r="160" fill="none" stroke="#00ff9d" stroke-opacity="0.25"/><circle cx="260" cy="260" r="210" fill="none" stroke="#00ff9d" stroke-opacity="0.25"/><line x1="45" y1="260" x2="475" y2="260" stroke="#00ff9d" stroke-opacity="0.2"/><line x1="260" y1="45" x2="260" y2="475" stroke="#00ff9d" stroke-opacity="0.2"/><g style="transform-origin:260px 260px; animation: rot 4s linear infinite"><path d="M260 260 L470 260 A210 210 0 0 0 408 112 Z" fill="#00ff9d" opacity="0.22"/><line x1="260" y1="260" x2="470" y2="260" stroke="#00ff9d" stroke-width="2"/></g><circle cx="340" cy="170" r="6" fill="#ff3860" filter="url(#glow)" class="p" style="animation-delay:0.0s"/><circle cx="190" cy="320" r="6" fill="#ffb800" filter="url(#glow)" class="p" style="animation-delay:0.5s"/><circle cx="350" cy="340" r="6" fill="#00d9ff" filter="url(#glow)" class="p" style="animation-delay:1.0s"/><circle cx="170" cy="200" r="6" fill="#ff3ec9" filter="url(#glow)" class="p" style="animation-delay:1.5s"/><circle cx="290" cy="420" r="6" fill="#00ff9d" filter="url(#glow)" class="p" style="animation-delay:2.0s"/><text x="260" y="40" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','Fira Code',monospace" font-size="13" font-weight="800" fill="#00ff9d">ATTACK SURFACE</text>
+</svg>
